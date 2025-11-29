@@ -6,8 +6,18 @@ CLEAN_DIR = Path("data/clean")
 WAREHOUSE_DIR = Path("data/warehouse")
 
 def create_customer_id(row) -> str:
-    """Create synthetic unique customer_id using hash."""
-    raw = f"{row['age']}-{row['job']}-{row['marital']}-{row['balance']}"
+    """Create synthetic unique customer_id using hash of main customer attributes."""
+    parts = [
+        str(row["age"]),
+        str(row["job"]),
+        str(row["marital"]),
+        str(row["education"]),
+        str(row["default"]),
+        str(row["housing"]),
+        str(row["loan"]),
+        str(row["balance"]),
+    ]
+    raw = "|".join(parts)
     return hashlib.md5(raw.encode()).hexdigest()
 
 def build_dim_customer(df: pd.DataFrame) -> pd.DataFrame:
