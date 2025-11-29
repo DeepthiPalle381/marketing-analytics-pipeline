@@ -173,17 +173,17 @@ Located in: sql/marketing_kpis.sql
 
 Includes:
 
-Overall conversion rate
+- Overall conversion rate
 
-Conversion by job
+- Conversion by job
 
-Conversion by month
+- Conversion by month
 
-Effect of previous campaign outcome
+- Effect of previous campaign outcome
 
-Call-duration effectiveness
+- Call-duration effectiveness
 
-Customer age group conversion rates
+- Customer age group conversion rates
 
 These queries simulate real business analytics for marketing teams.
 
@@ -195,9 +195,9 @@ File: dags/marketing_pipeline_dag.py
 
 Tasks:
 
-ingest_raw_to_clean (Bronze)
+1. ingest_raw_to_clean (Bronze)
 
-build_warehouse_tables (Silver/Gold)
+2. build_warehouse_tables (Silver/Gold)
 
 Scheduled daily (@daily).
 
@@ -211,13 +211,13 @@ tests/test_marketing_quality.py
 
 Includes:
 
-Target values must be 0 or 1
+- Target values must be 0 or 1
 
-All customer_id and campaign_id must exist in dims
+- All customer_id and campaign_id must exist in dims
 
-No negative balances or durations
+- No negative balances or durations
 
-Unique keys for dimension tables
+- Unique keys for dimension tables
 
 ---
 
@@ -225,18 +225,18 @@ Unique keys for dimension tables
 
 This project demonstrates:
 
-ETL/ELT data engineering
+- ETL/ELT data engineering
 
-Dimensional modeling (star schema)
+- Dimensional modeling (star schema)
 
-Fact & dimension table creation
+- Fact & dimension table creation
 
-Marketing KPI analytics using SQL
+- Marketing KPI analytics using SQL
 
-Automated data quality testing
+- Automated data quality testing
 
-Workflow scheduling (Airflow)
+- Workflow scheduling (Airflow)
 
-Clean, professional GitHub structure
+- Clean, professional GitHub structure
 
 It closely mirrors real-world data engineering work in banking, marketing, and analytics teams.
