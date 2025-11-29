@@ -8,7 +8,8 @@ CLEAN_DIR = Path("data/clean")
 def clean_bank_marketing(input_path: Path, output_path: Path) -> None:
     """Read raw bank marketing CSV and write a basic cleaned version."""
     print(f"Reading raw data from {input_path}...")
-    df = pd.read_csv(input_path)
+    df = pd.read_csv(input_path, sep=";")
+
 
     # Standardize column names: lower_snake_case
     df.columns = (
